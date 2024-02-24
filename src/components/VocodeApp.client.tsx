@@ -91,21 +91,13 @@ const VocodeApp: React.FC<VocodeAppProps> = ({ defaultBackendUrl, isInputEditabl
                         />
                     </div>
                 )}
-                {/* <button id="old-microphone-button"
-                    className={`microphoneButton ${["connecting"].includes(status) ? "disabled" : ""}`}
-                    disabled={["connecting"].includes(status)}
-                    onClick={status === "connected" ? stopMicrophone : startMicrophone}
-                >
-                    {status === "connected" ? <BiMicrophone size={50} /> : <BiMicrophoneOff size={50} />}
-                </button> */}
             </div>
             <button
                 id="new-microphone-button"
-                className="w-full px-6 py-4 text-white font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg shadow-lg hover:scale-105 duration-200 hover:drop-shadow-2xl hover:shadow-[#7dd3fc] hover:cursor-pointer"
+                className="w-full px-6 py-4 text-white font-semibold bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-lg shadow-lg hover:scale-105 duration-200 hover:drop-shadow-2xl hover:shadow-[#7dd3fc] hover:cursor-pointer"
                 disabled={["connecting"].includes(status) || !isBackendOnline}
                 onClick={status === "connected" ? stopMicrophone : startMicrophone}
             >
-                {/* If the backend is online, display the status of the conversation. If not, display 'Backend offline' */}
                 {isBackendOnline 
                     ? (status === "connected" 
                         ? "Click me to stop the conversation" 
@@ -122,7 +114,6 @@ const VocodeApp: React.FC<VocodeAppProps> = ({ defaultBackendUrl, isInputEditabl
                 <PingComponent backendUrl={backendPingUrl} setIsOnline={setIsBackendOnline} />
             </div>
             <div className="flex" style={{width: '400px'}}>
-            {/* Other JSX elements */}
                 {analyserNodeRef.current && <div className="w-1/2"><AudioVisualizer analyserNode={analyserNodeRef.current} /></div>}
                 {analyserNode && <div className="w-1/2"><AudioVisualizer analyserNode={analyserNode} /></div>}
             </div>
