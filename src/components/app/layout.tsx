@@ -9,8 +9,8 @@ import { BottomNavBar } from "@/components/BottomNavBar"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Vocode Next.js Vercel Template',
-  description: 'Discover the potential of voice-based large language models at Vocode',
+  title: 'Artisan AI ',
+  description: 'Discover the potential of voice-based large language models at Artisan Labs. Artisan Career AI ',
 }
 
 export default function RootLayout({
