@@ -5,6 +5,7 @@ import { BiMicrophone, BiMicrophoneOff } from 'react-icons/bi';
 import { useConversation, SelfHostedConversationConfig } from "vocode";
 import AudioVisualizer from '@/components/AudioVisualizer.client';
 import PingComponent from '@/components/PingComponent'; // Import PingComponent
+import { isChrome } from 'react-device-detect';
 
 
 import { Input } from "@/components/ui/input"
@@ -75,6 +76,11 @@ const VocodeApp: React.FC<VocodeAppProps> = ({ defaultBackendUrl, isInputEditabl
 
     return (
         <main>
+            {!isChrome && (
+                <div className="alert alert-warning">
+                    This application is only supported on Chrome.
+                </div>
+            )}
             <div className="flex w-full max-w-sm items-center space-x-2">
                 {isInputEditable && (
                     <div className="grid w-full max-w-sm items-center gap-1.5">
