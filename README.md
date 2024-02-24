@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js/Vercel Template with Vocode's FastAPI Python Backend
+
+This is a template for a [Next.js](https://nextjs.org/) project hosted on [Vercel](https://vercel.com/) that integrates with [Vocode's FastAPI Python backend](https://github.com/vocodedev/vocode-python). This template facilitates seamless communication between the Next.js frontend and the FastAPI backend, allowing developers to deploy a complete AI solution with Voice, Backend, and Frontend with just one click.
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repository:
+
+```bash
+git clone https://github.com/vocodedev/vocode-nextjs-vercel-template.git
+```
+
+Then, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+To run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. The page auto-updates as you edit the file.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Serverless Functions in Vercel: The template is configured with serverless functions using Python, ensuring compatibility with the FastAPI framework.
+- FastAPI Integration: The template establishes a connection between the Vercel-hosted Next.js frontend and the FastAPI Python backend, ensuring efficient data exchange.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Please read our [Contributing Guide](./CONTRIBUTING.md) and our [Code of Conduct](./CODE_OF_CONDUCT.md) for more information.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project is licensed under the [MIT License](./LICENSE).
 
-## Deploy on Vercel
+## Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you have any questions, feel free to open an issue or contact us directly at our [GitHub](https://github.com/vocodedev).
