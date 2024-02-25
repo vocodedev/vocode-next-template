@@ -18,9 +18,12 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="https://vercel.com/button"
+              <Image
+                src="/deploy-button.svg"
                 alt="Deploy with Vercel"
+                width={100}
+                height={24}
+                priority
               />
             </a>
             <a
