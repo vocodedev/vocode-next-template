@@ -19,7 +19,11 @@
 </p>
 <br/>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FArtisanLabs%2Fvocode-next-vercel-template&env=OPENAI_API_KEY,DEEPGRAM_API_KEY,AZURE_SPEECH_KEY,AZURE_SPEECH_REGION)
+<p align="center">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FArtisanLabs%2Fvocode-next-vercel-template&env=OPENAI_API_KEY,DEEPGRAM_API_KEY,AZURE_SPEECH_KEY,AZURE_SPEECH_REGION">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel">
+  </a>
+</p>
 
 First, clone the repository:
 
