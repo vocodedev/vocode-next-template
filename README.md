@@ -1,18 +1,30 @@
-![Project Hero Image](public/readme_hero.webp "Project Hero Image")
+<a href="https://github.com/ArtisanLabs/vocode-next-vercel-template">
+  <img alt="Next.js/Vercel Template with Vocode's FastAPI Python Backend" src="public/readme_hero.webp">
+  <h1 align="center">Next.js/Vercel Template with Vocode's FastAPI Python Backend</h1>
+</a>
 
-# Next.js/Vercel Template with Vocode's FastAPI Python Backend
+<p align="center">
+  The fastest way to build Voice AI application with 
+  <a href="https://vocode.dev" target="_blank" rel="noopener noreferrer"> Vocode</a> and 
+  <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer"> Next.js</a>
+</p>
+
+<p align="center">
+  <a href="#features"><strong>Features</strong></a> ·
+  <a href="#demo"><strong>Demo</strong></a> ·
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FArtisanLabs%2Fvocode-next-vercel-template&env=OPENAI_API_KEY,DEEPGRAM_API_KEY,AZURE_SPEECH_KEY,AZURE_SPEECH_REGION"><strong>Deploy to Vercel</strong></a> ·
+  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
+  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
+  <a href="#more-vocode-examples"><strong>More Examples</strong></a>
+</p>
+<br/>
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FArtisanLabs%2Fvocode-next-vercel-template&env=OPENAI_API_KEY,DEEPGRAM_API_KEY,AZURE_SPEECH_KEY,AZURE_SPEECH_REGION)
-
-
-
-This is a template for a [Next.js](https://nextjs.org/) project hosted on [Vercel](https://vercel.com/) that integrates with [Vocode's FastAPI Python backend](https://github.com/vocodedev/vocode-python). This template facilitates seamless communication between the Next.js frontend and the FastAPI backend, allowing developers to deploy a complete AI solution with Voice, Backend, and Frontend with just one click.
-
-## Getting Started
 
 First, clone the repository:
 
 ```bash
-git clone https://github.com/vocodedev/vocode-nextjs-vercel-template.git
+git clone https://github.com/ArtisanLabs/vocode-next-vercel-template
 ```
 
 Then, install the dependencies:
