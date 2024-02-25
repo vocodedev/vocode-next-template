@@ -65,7 +65,7 @@ export default function Home() {
         <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:underline dark:text-blue-300 dark:hover:underline"> Next.js</a>
       </p>
       <div className="flex flex-col items-center justify-center py-4">
-        <VocodeAppDynamic defaultBackendUrl="ws://localhost:19002/conversation" isInputEditable={false} />
+        <VocodeAppDynamic defaultBackendUrl="ws://localhost:3000/api/python/conversation" isInputEditable={false} />
       </div>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
       </div>

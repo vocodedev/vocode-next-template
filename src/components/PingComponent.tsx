@@ -27,7 +27,7 @@ function PingComponent({ backendUrl, setIsOnline }: PingComponentProps) {
         // This is done to ensure that the WebSocket connection for the ping component is made to the correct endpoint.
         const url = new URL(backendUrl);
         const host = url.host;
-        const pingUrl = url.protocol + host + '/ping';
+        const pingUrl = url.protocol + host + '/api/ping';
 
         wsRef.current = new WebSocket(pingUrl);
 
