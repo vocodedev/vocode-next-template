@@ -42,6 +42,21 @@ In production, the FastAPI server is hosted as Python serverless functions on Ve
 
 The FastAPI backend uses the Vocode library to connect to AI providers like Text-to-Speech (TTS), Speech-to-Text (STT), and Language Model (LLM) via websockets. This allows for real-time, efficient communication between the application and the AI services, enabling the development of robust, interactive Voice AI applications.
 
+# Prerequisites
+
+## Prerequisites
+
+Before you can run this application, you need to have the following installed:
+
+- [Node.js and npm](https://nodejs.org/en/download/)
+- [Python](https://www.python.org/downloads/) (version 3.9 or higher)
+- [Poetry](https://python-poetry.org/docs/#installation)
+- [OpenSSL 1.1.1](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/quickstarts/setup-platform?tabs=linux%2Cubuntu%2Cdotnetcli%2Cdotnet%2Cjre%2Cmaven%2Cnodejs%2Cmac%2Cpypi&pivots=programming-language-python) (required for Azure)
+- [FFmpeg](https://ffmpeg.org/download.html)
+
+Please follow the links to download and install each prerequisite.
+
+
 # Deploy Your Own FrontEnd
 You can clone & deploy it to Vercel with one click:
 
@@ -74,7 +89,7 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. The page auto-updates as you edit the file. Please note that this has been extensively tested with the latest versions of Chrome. For other browsers, if you encounter any issues, please create a GitHub issue in this repository: [https://github.com/vocodedev/vocode-react-sdk](https://github.com/vocodedev/vocode-react-sdk).
 
 ## Learn More
 
