@@ -4,13 +4,15 @@ version = "0.1.0"
 description = ""
 authors = ["Sebastian Rojo <arpagon@gmail.com>"]
 license = "MIT"
-readme = "README.md"
+readme = "../README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.12"
 vocode = "0.1.111"
-
+python-dotenv = "^1.0.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+

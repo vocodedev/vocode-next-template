@@ -4,10 +4,6 @@ export const runtime = 'edge';
 
 import dynamic from 'next/dynamic';
 import Image from 'next/image'
-import Head from 'next/head'
-import deployButton from './deploy-button.svg';
-import vocodeLogo from './vocode.svg';
-import nextLogo from './next.svg';
 
 const VocodeAppDynamic = dynamic(() => import('@/components/vocode-app'), { ssr: false });
 
@@ -22,7 +18,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <Image
-                src={deployButton}
+                src="/deploy.svg"
                 alt="Deploy with Vercel"
                 width={100}
                 height={24}
@@ -37,7 +33,7 @@ export default function Home() {
             >
               {" "}
               <Image
-                src={vocodeLogo}
+                src="/vocode.svg"
                 alt="Vocode Logo"
                 className="dark:invert"
                 width={100}
@@ -49,7 +45,7 @@ export default function Home() {
       <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-900 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
         <Image
           className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src={vocodeLogo}
+          src="/vocode.svg"
           alt="Vocode Logo"
           width={280}
           height={37}
@@ -58,7 +54,7 @@ export default function Home() {
         <a className="text-2xl px-6">/</a>
         <Image
           className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src={nextLogo}
+          src="/next.svg"
           alt="Next Logo"
           width={180}
           height={37}
