@@ -92,7 +92,7 @@ const VocodeApp: React.FC<VocodeAppProps> = ({ defaultBackendUrl, isInputEditabl
                             type="text"
                             value={backendUrl}
                             onChange={(e) => setBackendUrl(e.target.value)}
-                            placeholder="wss://artisan-backend.artisanai.co/conversation"
+                            placeholder="wss://localhost:8000/conversation"
                             className="backendUrlInput"
                         />
                     </div>

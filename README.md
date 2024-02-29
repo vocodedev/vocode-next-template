@@ -51,8 +51,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Features
 
-- Serverless Functions in Vercel: The template is configured with serverless functions using Python, ensuring compatibility with the FastAPI framework.
-- FastAPI Integration: The template establishes a connection between the Vercel-hosted Next.js frontend and the FastAPI Python backend, ensuring efficient data exchange.
+- Local Development: This template is configured to work seamlessly in a local environment, using Python as backend FastAPI.
+- FastAPI Integration: The template establishes a connection between the Next.js frontend and the FastAPI Python backend.
+- Vercel Deployment: While Vercel does not currently support WebSocket, this template can still be deployed on Vercel as a frontend application.
 
 ## Contributing
 

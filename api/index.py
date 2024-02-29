@@ -59,3 +59,11 @@ async def websocket_endpoint(websocket: WebSocket):
                 "serverSendTime": serverSendTime,
                 "clientSendTime": message.get("clientSendTime")
             })
+
+@app.get("/api/ping")
+async def get_ping():
+    """
+    This function handles GET requests at the /api/ping endpoint.
+    When a GET request is received, it returns a JSON response with a 'pong' message.
+    """
+    return {"message": "pong"}

@@ -104,7 +104,6 @@ function PingComponent({ backendUrl, setIsOnline }: PingComponentProps) {
                         <HiOutlineStatusOffline />
                         <p>Backend is offline</p>
                         <p>Backend URL: {backendUrl}</p>
-                        <p>If you need to do a demo please <a href="mailto:status@artisanlabs.io">write to us</a></p>
                     </>
                 )}
             </HoverCardContent>
