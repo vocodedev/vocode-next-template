@@ -38,3 +38,7 @@ next-env.d.ts
 certificates
 
 .local/images
+
+# pyyhon
+api/__pycache__
+api/.venv
