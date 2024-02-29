@@ -3,8 +3,8 @@
 import React, { useState, useRef } from 'react';
 import { BiMicrophone, BiMicrophoneOff } from 'react-icons/bi';
 import { useConversation, SelfHostedConversationConfig } from "vocode";
-import AudioVisualizer from '@/components/AudioVisualizer.client';
-import PingComponent from '@/components/PingComponent'; // Import PingComponent
+import AudioVisualizer from '@/components/audio-visualizer';
+import PingComponent from '@/components/ping-component'; // Import PingComponent
 import { isChrome } from 'react-device-detect';
 
 

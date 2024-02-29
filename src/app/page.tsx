@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image'
 import Head from 'next/head'
 
-const VocodeAppDynamic = dynamic(() => import('@/components/VocodeApp.client'), { ssr: false });
+const VocodeAppDynamic = dynamic(() => import('@/components/vocode-app'), { ssr: false });
 
 
 export default function Home() {
