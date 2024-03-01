@@ -1,4 +1,4 @@
-<a href="https://github.com/ArtisanLabs/vocode-next-vercel-template">
+<a href="https://github.com/vocodedev/vocode-next-template">
   <img alt="Next.js/Vercel Template with Vocode's FastAPI Python Backend" src="public/readme_hero.webp">
   <h1 align="center">Next.js/Vercel Template with Vocode's FastAPI Python Backend</h1>
 </a>
@@ -12,10 +12,10 @@
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·
   <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FArtisanLabs%2Fvocode-next-vercel-template&env=OPENAI_API_KEY,DEEPGRAM_API_KEY,AZURE_SPEECH_KEY,AZURE_SPEECH_REGION"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-vocode-examples"><strong>More Examples</strong></a>
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvocodedev%2Fvocode-next-template"><strong>Deploy to Vercel</strong></a> ·
+  <a href="#developing-locally"><strong>Clone and run locally</strong></a> ·
+  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a> ·
+  <a href="#learn-more"><strong>Learn More</strong></a>
 </p>
 <br/>
 
@@ -61,7 +61,7 @@ Please follow the links to download and install each prerequisite.
 You can clone & deploy it to Vercel with one click:
 
 <p align="center">
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FArtisanLabs%2Fvocode-next-vercel-template&env=OPENAI_API_KEY,DEEPGRAM_API_KEY,AZURE_SPEECH_KEY,AZURE_SPEECH_REGION">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvocodedev%2Fvocode-next-template">
     <img src="https://vercel.com/button" alt="Deploy with Vercel">
   </a>
 </p>
@@ -70,7 +70,7 @@ You can clone & deploy it to Vercel with one click:
 You can clone & create this repo with the following command
 
 ```bash
-npx create-next-app vocode-nextjs --example "https://github.com/ArtisanLabs/vocode-next-vercel-template"
+npx create-next-app vocode-nextjs --example "https://github.com/vocodedev/vocode-next-template"
 ```
 
 Then, install the dependencies:
