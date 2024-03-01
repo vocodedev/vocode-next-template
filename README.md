@@ -12,7 +12,7 @@
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·
   <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvocodedev%2Fvocode-next-template"><strong>Deploy to Vercel</strong></a> ·
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvocodedev%2Fvocode-next-template&demo-title=Next.js%2FVercel%20Template%20with%20Vocode's&demo-description=The%20fastest%20way%20to%20build%20Voice%20AI%20application%20with%20Vocode%20and%20Next.js&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fvocodedev%2Fvocode-next-template%2Fmain%2Fpublic%2Freadme_hero.webp"><strong>Deploy to Vercel</strong></a> ·
   <a href="#developing-locally"><strong>Clone and run locally</strong></a> ·
   <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a> ·
   <a href="#learn-more"><strong>Learn More</strong></a>
@@ -61,7 +61,7 @@ Please follow the links to download and install each prerequisite.
 You can clone & deploy it to Vercel with one click:
 
 <p align="center">
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvocodedev%2Fvocode-next-template">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvocodedev%2Fvocode-next-template&demo-title=Next.js%2FVercel%20Template%20with%20Vocode's&demo-description=The%20fastest%20way%20to%20build%20Voice%20AI%20application%20with%20Vocode%20and%20Next.js&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fvocodedev%2Fvocode-next-template%2Fmain%2Fpublic%2Freadme_hero.webp">
     <img src="https://vercel.com/button" alt="Deploy with Vercel">
   </a>
 </p>

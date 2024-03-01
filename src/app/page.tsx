@@ -13,7 +13,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="flex justify-end">
             <a
-              href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvocodedev%2Fvocode-next-template"
+              href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvocodedev%2Fvocode-next-template&demo-title=Next.js%2FVercel%20Template%20with%20Vocode's&demo-description=The%20fastest%20way%20to%20build%20Voice%20AI%20application%20with%20Vocode%20and%20Next.js&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fvocodedev%2Fvocode-next-template%2Fmain%2Fpublic%2Freadme_hero.webp"
               target="_blank"
               rel="noopener noreferrer"
             >
