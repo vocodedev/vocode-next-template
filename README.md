@@ -91,6 +91,22 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. The page auto-updates as you edit the file. Please note that this has been extensively tested with the latest versions of Chrome. For other browsers, if you encounter any issues, please create a GitHub issue in this repository: [https://github.com/vocodedev/vocode-react-sdk](https://github.com/vocodedev/vocode-react-sdk).
 
+## Docker all-in-one
+
+### Build
+```bash
+docker build --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
+             --build-arg VCS_REF=$(git rev-parse --short HEAD) \
+             --build-arg VERSION=0.1.111 \
+             -t vocode/vocode:0.1.111 .
+
+```
+### Run docker
+
+```
+docker run --rm --env-file .env -p 3000:3000 vocode/vocode:0.1.111
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

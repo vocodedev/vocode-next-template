@@ -42,5 +42,3 @@ certificates
 # pyyhon
 api/__pycache__
 api/.venv
-
-.env

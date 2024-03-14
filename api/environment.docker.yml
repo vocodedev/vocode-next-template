@@ -1,0 +1,22 @@
+name: vocode
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.10
+  - nodejs=20.9
+  - openssl
+  - portaudio
+  - ffmpeg
+  - git
+  - pip
+  - pip:
+    # Installing vocode from the git repository
+    - git+https://github.com/vocodedev/vocode-python.git#egg=vocode
+    - azure-cognitiveservices-speech==1.31.0
+    - python-dotenv
+    - ipython
+    - deepgram-sdk
+    - uvicorn
+    - pinecone-client
+    - poetry
