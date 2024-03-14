@@ -1,5 +1,5 @@
 # Use the official micromamba image as a base
-FROM docker.io/mambaorg/micromamba:1.5-jammy
+FROM docker.io/mambaorg/micromamba:1.5-jammy as base
 
 # Create a new user '$MAMBA_USER' and set the working directory
 COPY --chown=$MAMBA_USER:$MAMBA_USER api/environment.docker.yml /tmp/environment.yml
@@ -33,6 +33,7 @@ RUN groupadd --gid $VOCODE_GID $VOCODE_USER && \
     useradd --uid $VOCODE_UID --gid $VOCODE_GID --shell /bin/bash --create-home $VOCODE_USER
 
 
+FROM base AS builder
 # Copy the rest of your application files into the Docker image
 COPY --chown=$VOCODE_USER:$VOCODE_USER . /vocode
 WORKDIR /vocode
@@ -41,8 +42,15 @@ WORKDIR /vocode
 RUN PATH="/opt/conda/bin:${PATH}" npm install
 RUN PATH="/opt/conda/bin:${PATH}" npm run build
 
+FROM base AS runner
+WORKDIR /vocode
 #USER vocode
 USER root
+
+COPY --from=builder /vocode/public ./public
+COPY --from=builder --chown=$VOCODE_USER:$VOCODE_USER /vocode/.next/standalone ./
+COPY --from=builder --chown=$VOCODE_USER:$VOCODE_USER /vocode/.next/static ./.next/static
+COPY --from=builder --chown=$VOCODE_USER:$VOCODE_USER /vocode/api ./api
 
 ENV DOCKER_ENV="docker"
 
@@ -65,5 +73,6 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vendor="Vocode" \
       org.label-schema.version=$VERSION
 
-# Start the FastAPI app using Uvicorn
-CMD ["/opt/conda/bin/npm", "run", "docker-start"]
+# Copy supervisord configuration file and start services
+COPY docker/etc/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]

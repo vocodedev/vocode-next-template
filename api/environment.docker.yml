@@ -9,6 +9,7 @@ dependencies:
   - portaudio
   - ffmpeg
   - git
+  - supervisor
   - pip
   - pip:
     # Installing vocode from the git repository

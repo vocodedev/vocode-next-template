@@ -1,19 +1,22 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "standalone",
   // Define the domains for images
   images: {
     domains: ['vercel.com'],
   },
   // Define rewrites for API and documentation paths
   rewrites: async () => {
+    // Check if the environment is set for development or all-in-one Docker setup
+    const isDevOrDockerAllInOne = process.env.NODE_ENV === "development" || process.env.DOCKER_ENV === "all-in-one";
     return [
       {
         // Rewrite all API paths
         source: "/api/:path*",
         destination:
           // If in development mode, redirect to local server
-          process.env.NODE_ENV === "development"
+          isDevOrDockerAllInOne
             ? "http://127.0.0.1:8000/api/:path*"
             // In production, use the /api/ path
             : "/api/",
@@ -23,7 +26,7 @@ const nextConfig = {
         source: "/docs",
         destination:
           // If in development mode, redirect to local server
-          process.env.NODE_ENV === "development"
+          isDevOrDockerAllInOne
             ? "http://127.0.0.1:8000/docs"
             // In production, use the /api/docs path
             : "/api/docs",
@@ -33,7 +36,7 @@ const nextConfig = {
         source: "/openapi.json",
         destination:
           // If in development mode, redirect to local server
-          process.env.NODE_ENV === "development"
+          isDevOrDockerAllInOne
             ? "http://127.0.0.1:8000/openapi.json"
             // In production, use the /api/openapi.json path
             : "/api/openapi.json",
