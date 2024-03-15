@@ -3,7 +3,7 @@
 export const runtime = 'edge';
 
 import dynamic from 'next/dynamic';
-import Image from 'next/image'
+import Image from 'next/image';
 
 const VocodeAppDynamic = dynamic(() => import('@/components/vocode-app'), { ssr: false });
 
@@ -66,6 +66,17 @@ export default function Home() {
         <a href="https://vocode.dev" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:underline dark:text-blue-300 dark:hover:underline"> Vocode</a> and 
         <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:underline dark:text-blue-300 dark:hover:underline"> Next.js</a>
       </p>
+      <h1 className="text-4xl font-bold text-center dark:text-white">
+      AI engineer's Echo
+      </h1>
+      <Image
+        src="/arpagon__AI_assistant_represented_as_a_friendly_and_approachabl_bd1cca7a-6724-4086-ac56-36a81fb05f28_ligth.png"
+        alt="Friendly and Approachable AI Assistant"
+        width={300}
+        height={300}
+        className="dark:invert"
+        priority
+      />
       <div className="flex flex-col items-center justify-center py-4">
         <VocodeAppDynamic defaultBackendUrl={(window.location.protocol === 'https:' ? 'wss:' : 'ws:') + "//" + window.location.host + "/api/python/conversation"} isInputEditable={false} />
       </div>
