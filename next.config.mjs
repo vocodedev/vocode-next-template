@@ -8,38 +8,22 @@ const nextConfig = {
   },
   // Define rewrites for API and documentation paths
   rewrites: async () => {
-    // Check if the environment is set for development or all-in-one Docker setup
-    const isDevOrDockerAllInOne = process.env.NODE_ENV === "development" || process.env.DOCKER_ENV === "all-in-one";
+    // Always rewrite to the local server at localhost:8000
     return [
       {
-        // Rewrite all API paths
+        // Rewrite all API paths to local server
         source: "/api/:path*",
-        destination:
-          // If in development mode, redirect to local server
-          isDevOrDockerAllInOne
-            ? "http://127.0.0.1:8000/api/:path*"
-            // In production, use the /api/ path
-            : "/api/",
+        destination: "http://127.0.0.1:8000/api/:path*",
       },
       {
-        // Rewrite /docs path
+        // Rewrite /docs path to local server
         source: "/docs",
-        destination:
-          // If in development mode, redirect to local server
-          isDevOrDockerAllInOne
-            ? "http://127.0.0.1:8000/docs"
-            // In production, use the /api/docs path
-            : "/api/docs",
+        destination: "http://127.0.0.1:8000/docs",
       },
       {
-        // Rewrite /openapi.json path
+        // Rewrite /openapi.json path to local server
         source: "/openapi.json",
-        destination:
-          // If in development mode, redirect to local server
-          isDevOrDockerAllInOne
-            ? "http://127.0.0.1:8000/openapi.json"
-            // In production, use the /api/openapi.json path
-            : "/api/openapi.json",
+        destination: "http://127.0.0.1:8000/openapi.json",
       },
     ];
   },
