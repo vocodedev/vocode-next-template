@@ -1,7 +1,10 @@
+import os
 import logging
 from fastapi import FastAPI, WebSocket
 import datetime
 import json
+
+from langchain import hub
 
 from vocode.streaming.models.agent import ChatGPTAgentConfig
 from vocode.streaming.models.synthesizer import AzureSynthesizerConfig
@@ -21,11 +24,43 @@ logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
+langsmith_system_prompt = os.getenv('LANGSMITH_SYSTEM_PROMPT')
+system_prompt = os.getenv('SYSTEM_PROMPT')
+INITIAL_MESSAGE = os.getenv('INITIAL_MESSAGE', "Hello!")
+
+# Check if at least one of the environment variables is defined
+if langsmith_system_prompt is None and system_prompt is None:
+    raise ValueError("Either 'LANGSMITH_SYSTEM_PROMPT' or 'SYSTEM_PROMPT' must be defined in the environment.")
+
+# If both are defined, log a message indicating which one will be used
+if langsmith_system_prompt and system_prompt:
+    logger.info("Both 'LANGSMITH_SYSTEM_PROMPT' and 'SYSTEM_PROMPT' are defined. "
+                "'LANGSMITH_SYSTEM_PROMPT' will be used.")
+
+def get_system_prompt():
+    """
+    This function generates a dynamic SYSTEM_PROMPT with the current date.
+    """
+    if langsmith_system_prompt:
+        # Retrieve the system message from langsmith and format it with the current date
+        req = hub.pull(langsmith_system_prompt)
+        return req.format_messages(
+            current_date=datetime.datetime.now().strftime("%Y-%m-%d"),
+            question=""
+        )[0].content
+    elif system_prompt:
+        # Use the system message defined in the environment variable
+        return system_prompt
+    else:
+        # Default message if no environment variable is defined
+        return "Have a pleasant conversation about life"
+
+
 conversation_router = ConversationRouter(
     agent_thunk=lambda: ChatGPTAgent(
         ChatGPTAgentConfig(
-            initial_message=BaseMessage(text="Hello!"),
-            prompt_preamble="Have a pleasant conversation about life",
+            initial_message=BaseMessage(text=INITIAL_MESSAGE),
+            prompt_preamble=get_system_prompt(),
         )
     ),
     synthesizer_thunk=lambda output_audio_config: AzureSynthesizer(

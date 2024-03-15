@@ -9,8 +9,6 @@
     "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev-poetry\"",
     "build": "next build",
     "start": "next start",
-    "docker-fastapi": "python3 -m uvicorn api.index:app",
-    "docker-start": "concurrently \"npm run start\" \"npm run docker-fastapi\"",
     "lint": "next lint"
   },
   "dependencies": {
