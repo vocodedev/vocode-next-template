@@ -30,6 +30,12 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: set lower case owner name
+      run: |
+        echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+      env:
+        OWNER: '${{ github.repository_owner }}'
+
     # Build and push Docker image to GitHub Container Registry
     - name: Build and push
       uses: docker/build-push-action@v5
@@ -37,4 +43,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/vocode-next-template:latest
+        tags: ghcr.io/${{ env.OWNER_LC }}/vocode-next-template:latest
