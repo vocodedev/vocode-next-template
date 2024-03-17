@@ -37,9 +37,9 @@ jobs:
     # Determine the Docker tag name based on the branch name
     - name: Set Docker tag name
       run: |
-        # If the branch is 'main', set the tag name to 'main'
+        # If the branch is 'main', set the tag name to 'latest'
         if [[ "${GITHUB_REF#refs/heads/}" == "main" ]]; then
-          echo "DOCKER_TAG_NAME=main" >> $GITHUB_ENV
+          echo "DOCKER_TAG_NAME=latest" >> $GITHUB_ENV
         # If the branch is a release branch, extract the release name
         elif [[ "${GITHUB_REF#refs/heads/}" == release/* ]]; then
           # Extract the release name and set it as the tag name
