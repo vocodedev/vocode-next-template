@@ -2,9 +2,9 @@ name: Docker
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, ai-engineers-echo ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, ai-engineers-echo ]
 
 jobs:
   build-and-push:
@@ -43,4 +43,5 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ghcr.io/${{ env.OWNER_LC }}/vocode-next-template:latest
+        # Use the branch name as the tag for the Docker image
+        tags: ghcr.io/${{ env.OWNER_LC }}/vocode-next-template:${{ github.ref_name }}
