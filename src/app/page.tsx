@@ -70,7 +70,7 @@ export default function Home() {
       AI engineer&apos;s Echo
       </h1>
       <Image
-        src="/arpagon__AI_assistant_represented_as_a_friendly_and_approachabl_bd1cca7a-6724-4086-ac56-36a81fb05f28_ligth.png"
+        src="/AI_assistant.png"
         alt="Friendly and Approachable AI Assistant"
         width={300}
         height={300}
