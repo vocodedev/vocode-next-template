@@ -2,10 +2,9 @@ name: Docker
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    branches: 
+      - 'main'
+      - 'release/*'
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -35,7 +34,9 @@ jobs:
         echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
       env:
         OWNER: '${{ github.repository_owner }}'
-
+    - name: Extract branch name
+      id: branch-name
+      run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')" >> $GITHUB_ENV
     # Build and push Docker image to GitHub Container Registry
     - name: Build and push
       uses: docker/build-push-action@v5
@@ -43,4 +44,5 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ghcr.io/${{ env.OWNER_LC }}/vocode-next-template:latest
+        # Use the branch name as the tag for the Docker image
+        tags: ghcr.io/${{ env.OWNER_LC }}/myapp:${{ env.BRANCH_NAME }}
