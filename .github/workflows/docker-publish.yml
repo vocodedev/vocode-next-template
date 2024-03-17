@@ -34,9 +34,18 @@ jobs:
         echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
       env:
         OWNER: '${{ github.repository_owner }}'
-    - name: Extract branch name
-      id: branch-name
-      run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')" >> $GITHUB_ENV
+    # Determine the Docker tag name based on the branch name
+    - name: Set Docker tag name
+      run: |
+        # If the branch is 'main', set the tag name to 'main'
+        if [[ "${GITHUB_REF#refs/heads/}" == "main" ]]; then
+          echo "DOCKER_TAG_NAME=main" >> $GITHUB_ENV
+        # If the branch is a release branch, extract the release name
+        elif [[ "${GITHUB_REF#refs/heads/}" == release/* ]]; then
+          # Extract the release name and set it as the tag name
+          RELEASE_NAME=$(echo "${GITHUB_REF#refs/heads/release/}")
+          echo "DOCKER_TAG_NAME=${RELEASE_NAME}" >> $GITHUB_ENV
+        fi
     # Build and push Docker image to GitHub Container Registry
     - name: Build and push
       uses: docker/build-push-action@v5
@@ -45,4 +54,4 @@ jobs:
         file: ./Dockerfile
         push: true
         # Use the branch name as the tag for the Docker image
-        tags: ghcr.io/${{ env.OWNER_LC }}/myapp:${{ env.BRANCH_NAME }}
+        tags: ghcr.io/${{ env.OWNER_LC }}/vocode-next-template:${{ env.DOCKER_TAG_NAME }}
