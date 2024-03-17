@@ -67,7 +67,7 @@ export default function Home() {
         <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:underline dark:text-blue-300 dark:hover:underline"> Next.js</a>
       </p>
       <h1 className="text-4xl font-bold text-center dark:text-white">
-      AI engineer's Echo
+      AI engineer&apos;s Echo
       </h1>
       <Image
         src="/arpagon__AI_assistant_represented_as_a_friendly_and_approachabl_bd1cca7a-6724-4086-ac56-36a81fb05f28_ligth.png"
