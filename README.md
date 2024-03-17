@@ -19,6 +19,53 @@
 </p>
 <br/>
 
+## TL;DR: Docker Quickstart
+
+Get your Voice AI application running in two simple steps:
+
+### 1. **Create your `.env` file:**
+Start by creating a new `.env` file in your local directory. This file should contain all the necessary environment variables required for the application to run. Below is a template you can use as a starting point. Make sure to replace the placeholder values with your actual API keys and configuration settings.
+
+```plaintext
+# OPENAI_API_KEY: Your OpenAI API key for accessing OpenAI services.
+# You can obtain it from https://platform.openai.com/signup/
+OPENAI_API_KEY=
+
+# DEEPGRAM_API_KEY: Your Deepgram API key for accessing Deepgram's speech recognition services.
+# You can create an API key at https://console.deepgram.com/signup
+DEEPGRAM_API_KEY=
+
+# AZURE_SPEECH_REGION: The region of your Azure Speech service instance.
+# AZURE_SPEECH_KEY: Your Azure Speech service subscription key.
+# You can find this in the Azure portal under your Speech resource's "Keys and Endpoint" section.
+# For instructions on creating a speech resource, visit https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started
+AZURE_SPEECH_REGION=
+AZURE_SPEECH_KEY=
+
+# DOCKER_ENV: The environment setting for Docker to specify which configuration to use.
+# In this case, 'all-in-one' indicates a single container setup.
+DOCKER_ENV=all-in-one
+
+# LANGSMITH_SYSTEM_PROMPT: The system prompt key for Langsmith services.
+# Uncomment and set this variable if you want to use a custom system prompt from Langsmith.
+# LANGSMITH_SYSTEM_PROMPT=vocode/main
+
+# SYSTEM_PROMPT: The default system prompt message for initiating conversations.
+# This message is used if LANGSMITH_SYSTEM_PROMPT is not set.
+SYSTEM_PROMPT=Have a pleasant conversation about life
+
+# INITIAL_MESSAGE: The initial message sent by the system when a conversation starts.
+# This message can be customized to greet users or provide instructions.
+INITIAL_MESSAGE=Hello there!
+```
+
+### 2. **Run the Docker container:**
+With your `.env` file ready, execute the following command in your terminal to start the application. This command will download the Docker image from the GitHub Container Registry and run it, starting both the frontend and backend services.
+
+```bash
+docker run --rm --env-file .env -p 3000:3000 ghcr.io/artisanlabs/vocode-next-template:latest
+```
+After running the command, the frontend will be available at [http://localhost:3000](http://localhost:3000)
 
 ## Introduction
 
